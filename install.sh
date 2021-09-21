@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if (( $EUID != 0 )); then
+    echo "Please run as root"
+    exit 1
+fi
+
 if [ ! $(which wget) ]; then
     apt install wget -y
     echo 'Installing wget package'
@@ -13,11 +18,6 @@ fi
 if [ ! $(which unzip) ]; then
     apt install unzip -y
     echo 'Installing unzip package'
-fi
-
-if (( $EUID != 0 )); then
-    echo "Please run as root"
-    exit 1
 fi
 
 if [ -z "$1" ]; then
