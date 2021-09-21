@@ -3,5 +3,5 @@ region: eu
 tunnels:
   ssh:
     proto: http
-    addr: ip
+    addr: 172.16.117.2
  
