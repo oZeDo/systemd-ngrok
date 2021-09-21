@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
 if [ ! $(which wget) ]; then
-    echo 'Please install wget package'
-    exit 1
+    apt install wget -y
+    echo 'Installing wget package'
 fi
 
 if [ ! $(which git) ]; then
-    echo 'Please install git package'
-    exit 1
+    apt install git -y
+    echo 'Installing git package'
 fi
 
 if [ ! $(which unzip) ]; then
-    echo 'Please install zip package'
-    exit 1
+    apt install unzip -y
+    echo 'Installing unzip package'
 fi
 
 if (( $EUID != 0 )); then
